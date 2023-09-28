@@ -1,0 +1,10 @@
+:- dynamic parameter/2.
+
+prolog_runs(yes).
+
+parameter(dummy, 1).
+
+check_if_frozen(PName) :-
+	parameter(PName, Wert),
+	Wert < 0,
+	write("The system has detected a deviation, the value of the temperature parameter is in the minus range. The sensor of the device is iced and can’t be used for a correct measurement! Please defrost your sensor or change the device and repeat the measurement!").
